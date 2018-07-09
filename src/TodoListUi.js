@@ -22,7 +22,7 @@ const TodoListUi=(props)=>{
                 style={{marginTop:'10px',width:'300px'}}
                 bordered
                 dataSource={props.list}
-                renderItem={(item) => (<List.Item onClick={(index)=>{props.handleItemDelete(index)}} >{item}</List.Item>)}
+                renderItem={(item) => (<List.Item onClick={(index)=>{props.handleItemDelete(index)}} >{item.login}</List.Item>)}
                 //调用父组件带参数的函数用箭头函数
             />
         </div>

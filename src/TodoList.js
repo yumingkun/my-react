@@ -7,6 +7,7 @@ import TodoListUi from './TodoListUi';
 import  axios from 'axios';
 
 
+
 class TodoList extends  Component{
     constructor(props){
         super(props);
@@ -25,15 +26,16 @@ class TodoList extends  Component{
         )
     }
 
+    //使用网络数据，进行初始化
     componentDidMount(){
-       // axios.get('https://api.github.com/users')
-       //     .then((res)=>{
-       //         //console.log(res);//得要所有结果
-       //         const data=res;//具体看数据
-       //       //  console.log(data)
-       //         const action=initListAction(data);
-       //         store.dispatch(action);
-       //     })
+       axios.get('https://api.github.com/users')//上面已经引入地址
+           .then((res)=>{
+              // console.log(res);//得要所有结果
+               const data=res.data;//具体看数据
+             //  console.log(data)
+               const action=initListAction(data);
+               store.dispatch(action);
+           })
 
     }
 
