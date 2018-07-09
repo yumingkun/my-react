@@ -20,21 +20,21 @@ class TodoList extends  Component{
                 list={this.state.list}
                 handleInputChange={this.handleInputChange}
                 handleBtnClick={this.handleBtnClick}
-                handleItemDelet={this.handleItemDelete}
+                handleItemDelete={this.handleItemDelete}
             />
         )
     }
 
     componentDidMount(){
-       axios.get('https://api.github.com/users')
-           .then((res)=>{
-               //console.log(res);//得要所有结果
-               const data=res.data;//具体看数据
-             //  console.log(data)
-               const action=initListAction(data);
-               store.dispatch(action);
-           })
-           .catch()
+       // axios.get('https://api.github.com/users')
+       //     .then((res)=>{
+       //         //console.log(res);//得要所有结果
+       //         const data=res;//具体看数据
+       //       //  console.log(data)
+       //         const action=initListAction(data);
+       //         store.dispatch(action);
+       //     })
+
     }
 
     handleInputChange=(e)=>{
@@ -45,7 +45,7 @@ class TodoList extends  Component{
 
 
     handleStoreChange=()=>{
-        this.setState(store.getState())
+        this.setState(store.getState());
     };
 
     handleBtnClick=()=>{
